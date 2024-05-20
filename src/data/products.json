@@ -1,0 +1,24 @@
+[
+    {
+        "category": "insumos",
+        "code": "A3672",
+        "description": "Cable de red RJ-45 CAT5-e",
+        "id": 1,
+        "price": 1000,
+        "status": true,
+        "stock": 30,
+        "thumbnail": [],
+        "title": "Cable de red"
+    },
+    {
+        "category": "insumos",
+        "code": "A3673",
+        "description": "Plug macho RJ-45 CAT5-e",
+        "id": 2,
+        "price": 200,
+        "status": true,
+        "stock": 150,
+        "thumbnail": [],
+        "title": "Plug RJ-45"
+    }
+]
