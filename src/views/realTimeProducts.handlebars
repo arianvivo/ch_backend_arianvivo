@@ -1,0 +1,33 @@
+<h1>Productos en tiempo rsheal</h1>
+
+<div class="form-containers">
+<form id="addForm">
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="productName">
+  </div>
+  <div class="mb-3">
+    <label for="precio" class="form-label">Precio</label>
+    <input type="text" class="form-control" id="productPrice" >
+  </div>
+  <div class="mb-3">
+    <label for="descripcion" class="form-label">Descripcion</label>
+    <input type="text" class="form-control" id="productDescription">
+  </div>
+  <button type="submit" class="btn btn-primary">Agregar</button>
+</form>
+
+<form id="deleteForm">
+  <div class="mb-3">
+    <label for="ID" class="form-label">ID</label>
+    <input type="text" class="form-control" id="id">
+  </div>
+  <button type="submit" class="btn btn-primary">Eliminar</button>
+</form>
+</div>
+<div id="productList">
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

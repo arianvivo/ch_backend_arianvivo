@@ -18,8 +18,13 @@ const getProducts = async (limit) => {
 }
 
 const addProduct = async (product) => {
+    console.log("Add product execution:")
+    console.log(product)
+    
     await getProducts();                                                    // Obtener productos desde el archivo
+    
     const {title, description, price, thumbnail, code, stock, category } = product;
+   
     const newProduct = {
         id: products.length +1,
         title,
@@ -31,7 +36,8 @@ const addProduct = async (product) => {
         category,
         status : true
     };
-
+    console.log("New product recieved:")
+    console.log(newProduct)
     products.push(newProduct)
 
     await fs.promises.writeFile(pathFile, JSON.stringify(products));        // Guarda el producto nuevo en el archivo

@@ -1,0 +1,12 @@
+body {
+    background-color: #0e1113;
+    color: white;
+}
+.form-containers {
+    display: flex;
+    align-content: space-around;
+}
+
+.form-containers > * {
+    border: 2px solid black;
+}
