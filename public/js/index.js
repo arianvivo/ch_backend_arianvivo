@@ -5,16 +5,9 @@ const productList = document.getElementById("productList")
 const addForm = document.getElementById("addForm");
 const deleteForm = document.getElementById("deleteForm")
 
-
-productList.innerHTML = "<h3>Producteishons</h3>";
-
 // Recibir productos, del emit de la vista
 
 socket.on("products", (data) => {
-
-    productList.innerHTML = "<h3>EeProducteishons</h3>";
-
-    // productList.innerHTML = "";
 
     data.forEach( p => {
         const card = document.createElement("div");

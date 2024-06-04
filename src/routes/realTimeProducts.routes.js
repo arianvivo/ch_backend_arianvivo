@@ -9,10 +9,13 @@ router.get("/", async (req,res) => {
     try {
         const products =  await productManager.getProducts();
 
-        socketServer.emit("products", products)
+        
         console.log(products)
-
         res.render("realTimeProducts")
+
+        socketServer.emit("products", products)
+
+
 
     } catch (error) {
         console.log(error)
