@@ -9,7 +9,6 @@ router.get("/", async (req,res) => {
     try {
         const products =  await productManager.getProducts();
 
-        
         console.log(products)
         res.render("realTimeProducts")
 
