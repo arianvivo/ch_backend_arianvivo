@@ -5,8 +5,10 @@ import __dirname from "./dirname.js";
 import { Server, Socket } from "socket.io";
 import viewsRoutes from "./routes/views.routes.js"
 import realTimeProducts from "./routes/realTimeProducts.routes.js"
+import { connectMongoDB } from "./config/mongoDB.config.js";
 
 const app = express();
+connectMongoDB();
 const PORT = 8080;
 
 app.use(express.urlencoded({extended: true}))

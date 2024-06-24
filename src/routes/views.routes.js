@@ -1,13 +1,19 @@
-import { Router } from "express";
-import productManager from "../productManager.js";
+import { Router, json } from "express";
+// import productManager from "../productManager.js";
+import productDao from "../dao/mongoDB/product.dao.js";
 
 const router = Router();
 
 router.get("/", async (req,res) => {
     try {
-        const products = await productManager.getProducts();
+        console.log("recbo product requersts")
+        
+        // const products = await productManager.getProducts();
+        const products = await productDao.getAll();
+        const p = JSON.parse(JSON.stringify(products))
+        console.log(p)
         // Envía el objeto products al layout
-        res.render("home", {products});
+        res.render("home", p);
     } catch (error) {
         console.log(error)
         res.status(500).json({status: "error", msg: "Views products: Internal server"})

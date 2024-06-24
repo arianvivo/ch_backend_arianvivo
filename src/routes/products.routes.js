@@ -1,6 +1,7 @@
 import { Router } from "express";
-import productManager from "../productManager.js"               // Trae las funcions que definimos en ese archivo
+// import productManager from "../productManager.js"               // Trae las funcions que definimos en ese archivo
 import { checkProductData } from "../middlewares/checkProductData.middleware.js";
+import productDao from "../dao/mongoDB/product.dao.js"
 
 const router = Router()
 
@@ -10,8 +11,8 @@ router.get("/", async (req,res) => {
     try {
         const { limit } = req.query;                            // expandir variables
 
-        const products = await productManager.getProducts(limit);     
-
+        // const products = await productManager.getProducts(limit);     
+        const products = await productDao.getAll()
         res.status(200).json({status: "Success", products})
 
     } catch (error) {
@@ -26,7 +27,8 @@ router.get("/:pid", async (req,res) => {
         
         const {pid} = req.params
 
-        const product = await productManager.getProductByID(Number(pid))
+        // const product = await productManager.getProductByID(Number(pid))
+        const product = await productDao.getById(pid)
 
         if (!product) return res.status(404).json({ status :"error", msg : "Producto no encontrado"});
 

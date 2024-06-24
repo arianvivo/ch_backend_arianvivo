@@ -1,8 +1,8 @@
 // Usamos el objeto productmodel para nuestras consultas a la mongo
-import { productModel } from "./models/product.model";
+import { productModel } from "./models/product.model.js";
 
-const getAll = async (query, options) => {
-    const products = await productModel.paginate(query, options);
+const getAll = async () => {
+    const products = await productModel.find({status:true});
     return products;
 }
 
